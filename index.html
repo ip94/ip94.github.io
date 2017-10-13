@@ -26,11 +26,11 @@
 	        </form>
         </div>
         <script language="javascript">
-
+        	let ext_link = select.value;
             function check(form) {
                 if(form.pswrd.value == "password") {
                 	switch (ext_link) {
-        				case select.value == "winnie":
+        				case "winnie":
         					window.open('https://ip94.github.io/winnie.html');
         					break;
         				// case select.option.value == "korean":
@@ -38,10 +38,10 @@
         					// window.open('https://ip94.github.io/winnie.html');
         					// break;
         			} 
-                }
+                };
                 else {
                     alert("Error Password")
-                }
+                };
             }
         </script>
     </body>
