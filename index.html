@@ -26,12 +26,19 @@
 	        </form>
         </div>
         <script language="javascript">
+
             function check(form) {
                 if(form.pswrd.value == "password") {
-                    window.open('https://ip94.github.io/winnie.html')
+                	switch (ext_link) {
+        				case select.option.value == "winnie":
+        					window.open('https://ip94.github.io/winnie.html')
+        				// case select.option.value == "korean":
+        				// opens a window to Korean Restaurant Guide
+        					// window.open('https://ip94.github.io/winnie.html')
+        			} 
                 }
                 else {
-                    alert("Error Password or Username")
+                    alert("Error Password")
                 }
             }
         </script>
