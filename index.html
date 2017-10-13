@@ -1,13 +1,30 @@
 <html>
     <head>
         <title>Login page</title>
+        <style type="text/css">
+        <!-- 
+        div {display: flex; margin: 1.2em;}
+        label {float: left; margin-right: 2em; }
+        .form {float: right; }
+        -->
+        </style>
     </head>
     <body>
-        <h1>Please enter the password</h1>
-        <form name="login">
-            Password: <input placeholder="type password here" type="password" name="pswrd"/>
-            <input type="button" onclick="check(this.form)" value="Login"/>
-        </form>
+        <h1>Password Form</h1>
+		<div>
+			<label>Document:</label>
+			<select class=form name="document">
+				<option value="winnie">Lab 3 Winnie</option>
+				<option value="korean">Lab 4 Korean Restaurants</option>
+			</select>
+		</div>
+		<div>
+			<label>Password:</label>
+	        <form class=form name="login">
+	            <input placeholder="type password here" type="password" name="pswrd"/>
+	            <input type="button" onclick="check(this.form)" value="Login"/>
+	        </form>
+        </div>
         <script language="javascript">
             function check(form) {
                 if(form.pswrd.value == "password") {
