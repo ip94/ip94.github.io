@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Login page</title>
@@ -13,36 +14,27 @@
         <h1>Password Form</h1>
 		<div>
 			<label>Document:</label>
-			<select class=form name="document">
+			<select class=form id="document">
 				<option value="winnie">Lab 3 Winnie</option>
 				<option value="korean">Lab 4 Korean Restaurants</option>
 			</select>
 		</div>
 		<div>
 			<label>Password:</label>
-	        <form class=form name="login">
+	        <form class=form id="login">
 	            <input placeholder="type password here" type="password" name="pswrd"/>
 	            <input type="button" onclick="check(this.form)" value="Login"/>
 	        </form>
         </div>
         <script language="javascript">
-        	var doc_type = select.selectedIndex;
-            function check(form) {
+        	function check(form) {
                 if(form.pswrd.value == "password") {
-                	switch (doc_type) {
-        				case 0:
-        					window.open('https://ip94.github.io/winnie.html');
-        					break;
-        				// case select.option.value == "korean":
-        				// opens a window to Korean Restaurant Guide
-        					// window.open('https://ip94.github.io/winnie.html');
-        					// break;
-        			};
+                	const value = document.getElementById("document").value;
+                	window.open(`https://ip94.github.io/${value}.html`);
+                } else {
+                    alert("Error Password");
                 }
-                else {
-                    alert("Error Password")
-                };
-            }
+	        }
         </script>
     </body>
 </html>
