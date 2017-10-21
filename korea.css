@@ -1,0 +1,108 @@
+.col-1 {
+    width: 8.3%;
+}
+
+.col-2 {
+    width: 16.6%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33%;
+}
+
+.col-5 {
+    width: 41.6%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.3%;
+}
+
+.col-8 {
+    width: 66.6%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.3%;
+}
+
+.col-11 {
+    width: 91.6%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
+    width: 66%;
+    margin: auto;
+    padding: 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    font-family: Cambria, "Times New Roman", Arial, monospace;
+    background-image: url(https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg) no-repeat;
+    background-size: contain
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+nav {
+    width: 25%;
+    float: left;
+    border: solid brown;
+    border-radius: 15px;
+    padding: 20px 0px 20px 0px
+}
+
+main {
+    float: right;
+    width: 70%;
+}
+
+.blank_row {
+    height: 10px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.link-item {
+    font-size: 20px
+}
+
+.name {
+    font-size: 2em;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
