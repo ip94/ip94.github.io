@@ -4,17 +4,408 @@
 	<title>Korea Guide Technical Guide</title>
 </head>
 <body>
-<H2>HTML code</H2>
-	<blockquote>
-		<code>
-			<textarea disabled="disabled" style="width: 100%; height: 1300px;">
+	<H2>HTML code</H2>
+		<blockquote>
+			<code>
+				<textarea readonly="readonly" style="width: 100%; height: 1000px;">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Toronto Koreatown Restaurant and Food Guide">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-town Food Guide</title>
+  <link rel="stylesheet" href="korea.css">
+</head>
+<body>
+<h1>TO K-town Guide</h1>
+<section class="row" id="map">
+  <iframe src="https://www.google.com/maps/d/embed?mid=1ps2H4CG9wiyZ3yKa21VA16J_ClU" width="600" height="400"></iframe>
+</section>
+<section class="row">
+  <nav>
+    <table>
+      <tr>
+        <td><a href="#tofu" class="link-item">Buk Chang Dong Soon Tofu</a></td>
+      </tr>
+      <tr>
+        <td><a href="#khouse" class="link-item">Korea House</a></td>
+      </tr>
+      <tr>
+        <td><a href="#limgane" class="link-item">Lim Ga Ne</a></td>
+      </tr>
+      <tr>
+        <td><a href="#kvillage" class="link-item">Korean Village</a></td>
+      </tr>
+      <tr>
+        <td><a href="#imonay" class="link-item">Imonay Korean Restaurant</a></td>
+      </tr>
+      <tr>
+        <td><a href="#ajuker" class="link-item">Ajuker Fried Chicken</a></td>
+      </tr>
+      <tr>
+        <td><a href="#nooroll" class="link-item">Noodle &amp; Roll House</a></td>
+      </tr>
+      <tr>
+        <td><a href="#hancook" class="link-item">Hancook Cheese Dakgalbi</a></td>
+      </tr>
+    </table>
+  </nav>
+  <main>
+    <table class="col-12">
+      <tr class="name">
+        <td id="tofu" colspan="3"><h2>Buk Chang Dong Soon Tofu</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>A long-standing restaurant with the best soon tofu in
+          Toronto. They serve freshly steamed mixed rice in a stone bowl.</p></td>
+        <td class="col-2" rowspan="3">
+          <img
+              src="http://s3.amazonaws.com/btoimage/prism-thumbnails/listings/20170725-2048-BukChang10.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.jpg"
+              alt="Photo of soon tofu by BlogTO"/>
+        </td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">691 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 537-0972</td>
+      </tr>
 
-			</textarea>
-		</code>
-	</blockquote>
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="khouse" colspan="3"><h2>Korea House</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>Their ginseng chiken soup is recommended!</p></td>
+        <td class="col-2" rowspan="3">
+          <img
+              src="http://media.blogto.com/listings/39d5-201184-koreahouse-beefribs.jpg?cmd=resize_then_crop&quality=70&w=2048&height=1365"
+              alt="Photo of kalbi by BlogTO"/>
+        </td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">666 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 536-8666</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="limgane" colspan="3"><h2>Lim Ga Ne</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>Best of the best! Serving a wide variety of traditional Korean
+          dishes with affordable price. Secret menu only known among fellow Koreans.</p></td>
+        <td class="col-2" rowspan="3">
+          <img
+              src="http://media.blogto.com/articles/0a74-201623-korean.jpg?cmd=resize_then_crop&quality=70&w=2048&height=1365"
+              alt="Yummy noodle at Lim Ga Ne"/></td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">680 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 551-0686</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="kvillage" colspan="3"><h2>Korean Village</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>This Korean-Japanese restaurant is also known as "韓國館",
+          which many celebrities have visited. Recommended for its quality Korean BBQ and it is second best
+          overall in Koreatown.</p></td>
+        <td class="col-2" rowspan="3">
+          <img src="https://i.ytimg.com/vi/e7gAZD0_7zw/maxresdefault.jpg"
+               alt="Yummy BBQ at Korean Village"/></td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">628 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 536-0290</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="imonay" colspan="3"><h2>Imonay Korean Restaurant</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>Their specialties are soybean paste stew and soymilk noodles.
+          Good for those who like to change up opo</p></td>
+        <td class="col-2" rowspan="3"><img
+            src="http://www.imonaykoreanrestaurant.ca/assets/images/Imonay-Korean-Restaurant.jpg"
+            alt="Imonay noodle soup"/></td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">665 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 533-2850</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="ajuker" colspan="3"><h2>Ajuker Fried Chicken</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2">Korean fried chicken, as popularized from classic Korean drama, must
+          go with beer.
+        </td>
+        <td class="col-2" rowspan="3">
+          <img src="https://s3-media2.fl.yelpcdn.com/bphoto/dUVF-NuKC91XkafISnwyPA/o.jpg"
+               alt="photo of Korean fried chicken from yelpcdn">
+        </td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">680 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 536-8292</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="nooroll" colspan="3"><h2>Noodle &amp; Roll House</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>As the name on their banner suggested, their signature dish is
+          Korean black bean noodles. If you are a spicy food lover and an adventurer, Jamppong is definitely a
+          must have.</p></td>
+        <td class="col-2" rowspan="3">
+          <img
+              src="http://www.curiousnut.com/wp-content/uploads/2015/06/Korean-Black-Bean-Noodles-New-Feat-1.jpg"
+              alt="Korean blck bean noodles by CuriousNut">
+        </td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">648 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 516-8383</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+
+
+      <tr class="name">
+        <td id="hancook" colspan="3"><h2>Hancook Cheese Dakgalbi</h2></td>
+      </tr>
+      <tr>
+        <td class="description col-5" colspan="2"><p>Hancook has the best spicy pan fried chicken. You can choose to
+          add rice (to make it fried rice), noodle (to make it fried noodle) and other toppings such as cheese
+          and rice cake. It's a must try if you like to share "hot pans" with your friends. They give you free
+          red bean shaved ice at the end! Love it!</p></td>
+        <td class="col-2" rowspan="3">
+          <img
+              src="https://s3-media1.fl.yelpcdn.com/bphoto/Hs6gnqWhs0cOEigzsk54pg/180s.jpg"
+              alt="Hancook's spicy pan fried chicken with cheese from yelpcdn">
+        </td>
+      </tr>
+      <tr>
+        <th class="col-1">Address</th>
+        <td class="col-4">605 Bloor St W, Toronto, ON</td>
+      </tr>
+      <tr>
+        <th class="col-1">Phone</th>
+        <td class="col-4">(416) 516-1222</td>
+      </tr>
+
+      <tr class="blank_row">
+        <td colspan="3">&nbsp;</td>
+      </tr>
+    </table>
+  </main>
+</section>
+<section class="row">
+  <footer>
+  This webpage is made by Irene Poon (500866399) for CPS530 Web System Development, Ryerson University. <br> <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fip94.github.io%2Fkorea.html">W3 Validation Report</a>
+      <a href="https://ip94.github.io/korea_tech.html">Technical Report</a>
+  </footer>
+</section>
+</body>
+</html>
+				</textarea>
+			</code>
+		</blockquote>
+	<H2>CSS code</H2>
+		<blockquote>
+			<code>
+				<textarea readonly="readonly" style="width: 100%; height: 1300px;">
+.col-1 {
+    width: 8.3%;
+}
+
+.col-2 {
+    width: 16.6%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33%;
+}
+
+.col-5 {
+    width: 41.6%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.3%;
+}
+
+.col-8 {
+    width: 66.6%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.3%;
+}
+
+.col-11 {
+    width: 91.6%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
+    width: 66%;
+    margin: auto;
+    padding: 10px;
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    font-family: Cambria, "Times New Roman", Arial, monospace;
+    background-image: url(https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg) no-repeat;
+    background-size: contain
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+#map {
+    position: relative;
+    padding-bottom: 30%; // This is the aspect ratio
+    height: 400;
+    overflow: hidden;
+}
+#map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+nav {
+    width: 20%;
+    float: left;
+    border: solid brown;
+    border-radius: 15px;
+    padding: 20px 0px 20px 0px
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+main {
+    float: right;
+    width: 70%;
+}
+
+.blank_row {
+    height: 10px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.link-item {
+    font-size: 20px
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+				</textarea>
+			</code>
+		</blockquote>
 	<H2>CSS</H2>
 	<H3>Global Class</H3>
-
+	<p>.blank_row for the purpose of attaining the desired webpage look and .link-item for navigation items.<br>
+	Also, some global .col-_ classes were created to be used to adjust section layouts.</p>
 	<H3>Element Class</H3>
 	map
 	<H3>CSS-3 Feature Used</H3>
@@ -26,7 +417,7 @@
 	<p>The same protection method was used as last time, with newly added selection at log-in page for user to indicate which document to access</p>
 	<hr>
 	<p>
-	Approximately 6 hours were committed to this lab.
+	Approximately 8 hours were committed to this lab.
 	</p>
 </body>
 </html>
