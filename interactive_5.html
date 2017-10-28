@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 5 Interactive</title>
+</head>
+<body>
+	<p>I am 
+		<select name="identity" form="main">
+			<option value="inst">the instructor</option>
+			<option value="stud">a student</option>
+		</select>
+	in the CS course.</p>
+	<form action="/interactive_5.pl" id="main">
+		I would give this student a grade that equates to the sum of:<br>
+		<input type="checkbox" name="grade" value="20" checked="checked">20
+		<input type="checkbox" name="grade" value="80" checked="checked">80<br>
+		<input type="checkbox" name="grade" value="10" checked="checked">10
+		<input type="checkbox" name="grade" value="40" checked="checked">40.<br><br>
+		I wish that students can be
+		<input type="text" name="comments">.<br>
+		<input type="submit" name="Done">
+	</form>
+</body>
+</html>
