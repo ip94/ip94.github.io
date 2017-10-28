@@ -1,6 +1,5 @@
 #!/usr/bin/perl
-use CGI':standard';
-use strict;
+
 print "Content-type: text/html\n\n";
 
 $title = "first Perl program";
@@ -20,7 +19,7 @@ return qq{<link href="https://fonts.googleapis.com/css?family=$font" rel="styles
 
 sub style {
 $style = qq{
-<style type="text/css"
+<style type="text/css">
 <!-- 
 H1 {font-family: '$font'; font-size: 3em; color: red; text-align: center}
 -->
