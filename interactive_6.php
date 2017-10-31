@@ -16,8 +16,10 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 <head>
 	<title>PHP Interactive 6 Results</title>
 	<style type="text/css">
+		* {margin: auto;}
 		table {border-collapse: collapse; width: 80%;}
-		table, th, td {border: 1px solid black; text-align: center; margin: auto; height: 30px}
+		table, th, td {border: 1px solid black; text-align: center; height: 30px}
+		p {font-size: 20px;}
 	</style>
 </head>
 <body>
@@ -48,7 +50,7 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 		}
 	}
 
-	echo "<p>Your visits: $cookie_visit_count</p>"
+	echo "<p>Your visits: $cookie_visit_count!</p>"
 	?>
 </body>
 </html>
