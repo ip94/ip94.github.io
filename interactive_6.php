@@ -48,7 +48,7 @@ setcookie("cookie_visit_count", $cookie_visit_count++, $ThreeMonthExpire);
 		}
 	}
 
-	echo "<p>Your visits: $cookie_visit_count!</p>";
+	echo "<p>Your visits: $_COOKIE["cookie_visit_count"]!</p>";
 	?>
 	</div>
 </body>
