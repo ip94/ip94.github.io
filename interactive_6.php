@@ -4,10 +4,12 @@ $ThreeMonthExpire = 60 * 60 * 24 * 90 + time();
 // See if the HTTP request has ever set $cookie_visit_count
 if(!isset($_COOKIE["cookie_visit_count"])) {
  // No cookie called count, set the counter to 1 
- $cookie_visit_count = 0;
+	$new_cookie_visit_count = 1;
+} else {
+	$new_cookie_visit_count = $_COOKIE["cookie_visit_count"] + 1;
 }
 // Set a cookie "count" with the current value
-setcookie("cookie_visit_count", $cookie_visit_count++, $ThreeMonthExpire);
+setcookie("cookie_visit_count", $new_cookie_visit_count, $ThreeMonthExpire);
 ?>
 <html>
 <head>
@@ -48,7 +50,7 @@ setcookie("cookie_visit_count", $cookie_visit_count++, $ThreeMonthExpire);
 		}
 	}
 
-	echo "<p>Your visits: $_COOKIE["cookie_visit_count"]!</p>";
+	echo "<p>Your visits: $new_cookie_visit_count!</p>";
 	?>
 	</div>
 </body>
