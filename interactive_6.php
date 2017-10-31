@@ -6,7 +6,6 @@ if(!isset($_COOKIE["cookie_visit_count"])) {
  // No cookie called count, set the counter to 1 
  $cookie_visit_count = 0;
 }
-$cookie_visit_count++;
 // Set a cookie "count" with the current value
 setcookie("cookie_visit_count", $cookie_visit_count++, $ThreeMonthExpire);
 ?>
