@@ -16,7 +16,7 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 <head>
 	<title>PHP Interactive 6 Results</title>
 	<style type="text/css">
-		* {margin: auto;}
+		div {align-content: center;}
 		table {border-collapse: collapse; width: 80%;}
 		table, th, td {border: 1px solid black; text-align: center; height: 30px}
 		p {font-size: 20px;}
@@ -24,12 +24,13 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 </head>
 <body>
 	<h1>Lab 6 - Interactive PHP (Results)</h1>
+	<div>
 	<?php
 	$size = $_GET['table_size'];
 	// validate that input is between 3 and 12
 	// if input is not, print Invalid Size. Please go back and try again.
 	if (3 > $size or $size > 12) {
-	    echo "Invalid Size. Please go back and try again";
+	    echo "Invalid size. Please go back and try again";
 	} else {
 	// else, create a table
 		// Create an array containing all numbers ranging from 1 to $size
@@ -38,7 +39,7 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 		    $size_array[$x - 1] = $x;
 		    $x ++;
 		}
-		echo "<table border=\"1\" align=\"center\">";
+		echo "<table>";
 		echo "<tr><th colspan=\"$size\">My Multiplication Table</th></tr>";
 		foreach ($size_array as $value_0) {
 			echo "<tr>";
@@ -52,5 +53,6 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 
 	echo "<p>Your visits: $cookie_visit_count!</p>";
 	?>
+	</div>
 </body>
 </html>
