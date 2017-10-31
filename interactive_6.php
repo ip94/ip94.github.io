@@ -43,14 +43,14 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 		foreach ($size_array as $value_0) {
 			echo "<tr>";
 			foreach ($size_array as $value_1) {
-				$table_content = $value_0*$value_1
+				$table_content = $value_0*$value_1;
 				echo "<td>$table_content</td>";
 			}
 			echo "</tr>";
 		}
 	}
 
-	echo "<p>Your visits: $cookie_visit_count!</p>"
+	echo "<p>Your visits: $cookie_visit_count!</p>";
 	?>
 </body>
 </html>
