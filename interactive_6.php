@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <?php
-$cookie_name = "user";
 $ThreeMonthExpire = 60 * 60 * 24 * 90 + time();
 // See if the HTTP request has ever set $cookie_visit_count
-if(!isset($cookie_visit_count)) {
+if(!isset($_COOKIE["cookie_visit_count"])) {
  // No cookie called count, set the counter to 1 
- $cookie_visit_count = 1;
-} else {
- $cookie_visit_count++;
+ $cookie_visit_count = 0;
 }
+$cookie_visit_count++;
 // Set a cookie "count" with the current value
-setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
+setcookie("cookie_visit_count", $cookie_visit_count++, $ThreeMonthExpire);
 ?>
 <html>
 <head>
@@ -26,7 +24,7 @@ setcookie($cookie_name, "$cookie_visit_count", $ThreeMonthExpire);
 	<h1>Lab 6 - Interactive PHP (Results)</h1>
 	<div>
 	<?php
-	$size = $_GET['table_size'];
+	$size = $_POST['table_size'];
 	// validate that input is between 3 and 12
 	// if input is not, print Invalid Size. Please go back and try again.
 	if (3 > $size or $size > 12) {
