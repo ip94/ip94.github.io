@@ -3,29 +3,34 @@
 session_start();
 
 $id = $idErr = "";//define variables id and idErr
-//check if form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") { // and isset($_POST['SubmitButton'])
-    if (empty($_POST["id"])) {
-        $idErr = "Missing";
-    }
-    else {
-        $id = test_input($_POST["id"]); //get input text
-    }
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     log_out();
 }
 
+// to determine if visitor is logged in or not
+// $_SESSION['name'] should be defined if visitor has not logged out.
 if(isset($_SESSION['name'])) {
     $id = $_SESSION['name'];
-} else {
-    $file = "id_list.txt";
-    $fh = fopen($file, 'r');
-    $data = fread($fh, filesize($file));
-    fclose($fh);
-    $id_list = explode("\n", $data); //TODO: chck if \n is the right format in txt
-    $valid = checkvalid($id);
+// Visitor not validated
+//check if form was submitted
+} elsif ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if (empty($_POST["id"])) {
+        $idErr = "Missing";
+    }
+    else {
+        $id = test_input($_POST["id"]); //get input text
+        $file = "id_list.txt";
+        $fh = fopen($file, 'r');
+        $data = fread($fh, filesize($file));
+        fclose($fh);
+        $id_list = explode("\n", $data); //TODO: chck if \n is the right format in txt
+        $valid = checkvalid($id);
+        if (!$valid) {
+            $idErr = "Invalid User"
+        }
+    }
+
 }
 // retrieve data from valid id list id_list.txt
 
