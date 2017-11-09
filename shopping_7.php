@@ -14,7 +14,7 @@ if(isset($_SESSION['name'])) {
     $id = $_SESSION['name'];
 // Visitor not validated
 //check if form was submitted
-} elsif ($_SERVER["REQUEST_METHOD"] == "POST"){
+} elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["id"])) {
         $idErr = "Missing";
     }
@@ -27,7 +27,7 @@ if(isset($_SESSION['name'])) {
         $id_list = explode("\n", $data); //TODO: chck if \n is the right format in txt
         $valid = checkvalid($id);
         if (!$valid) {
-            $idErr = "Invalid User"
+            $idErr = "Invalid User";
         }
     }
 
@@ -116,7 +116,7 @@ if(isset($_SESSION['name'])) {
     }
 
     function check_valid ($input) {
-        if ($input in $id_list) {
+        if (in_array($input, $id_list)) {
             $response = True;
             _SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
         } else {
