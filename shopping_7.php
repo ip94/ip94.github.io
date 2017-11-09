@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-$id = $idErr = "";//define variables id and idErr
+$id = $idErr = $valid = "";//define variables id and idErr
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     log_out();
@@ -25,7 +25,7 @@ if(isset($_SESSION['name'])) {
         $data = fread($fh, filesize($file));
         fclose($fh);
         $id_list = preg_split('/\r\n|\r|\n/', $data);
-        $valid = checkvalid($id);
+        $valid = check_valid($id);
         if (!$valid) {
             $idErr = "Invalid User";
         }
@@ -84,7 +84,7 @@ if(isset($_SESSION['name'])) {
             <div class="form-group">
                 <label class="control-label col-3" for="email">Email address:</label>
                 <input class="form-control col-6" type="email" name="id">
-                <span class="alert alert-danger col-3"><?php echo $idErr ?></span> <!-- TODO: check display -->
+                <span class="col-3"><?php echo $idErr ?></span> <!-- TODO: check display -->
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
