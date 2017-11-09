@@ -118,7 +118,7 @@ if(isset($_SESSION['name'])) {
     function check_valid ($input) {
         if (in_array($input, $id_list)) {
             $response = True;
-            _SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
+            $_SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
         } else {
             $response = False;
         }
