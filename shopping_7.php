@@ -24,7 +24,7 @@ if(isset($_SESSION['name'])) {
         $fh = fopen($file, 'r');
         $data = fread($fh, filesize($file));
         fclose($fh);
-        $id_list = explode("\n", $data); //TODO: chck if \n is the right format in txt
+        $id_list = preg_split('/\r\n|\r|\n/', $data);
         $valid = checkvalid($id);
         if (!$valid) {
             $idErr = "Invalid User";
@@ -43,9 +43,6 @@ if(isset($_SESSION['name'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .error {}
-    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -67,13 +64,11 @@ if(isset($_SESSION['name'])) {
             </ul>
             <span class="navbar-right pull-right form-inline">
                 <form method="GET" action="" style="color: white">
-                    HELLO
                     <?php
-                    echo "hello";
                     if ($valid) {
-                        echo "Logged in as ".$id;
+                        echo "Logged in as ".$id." ";
                     } else {
-                        echo "Not logged in";
+                        echo "Not logged in ";
                     }
                     ?>
                     <button type="submit" class="btn btn-primary">Log Out</button>
@@ -87,13 +82,9 @@ if(isset($_SESSION['name'])) {
     <div class="container">
         <form class="form-inline form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email address:</label>
-                <div class="col-sm-8">
-                    <input class="form-control" type="email" name="id">
-                </div>
-                <div class="col-sm-2">
-                    <span class="error"><?php echo $idErr ?></span> <!-- TODO: check display -->
-                </div>
+                <label class="control-label col-3" for="email">Email address:</label>
+                <input class="form-control col-6" type="email" name="id">
+                <span class="alert alert-danger col-3"><?php echo $idErr ?></span> <!-- TODO: check display -->
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -103,6 +94,7 @@ if(isset($_SESSION['name'])) {
         <div class="jumbotron">
             <h2>You have entered the homepage as <?php echo $id ?></h2>
             <p>Feel free to roam around the pages.</p>
+            <p>Please log out before leaving.</p>
         </div>
     </div>
 <?php endif; ?>

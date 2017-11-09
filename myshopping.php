@@ -33,10 +33,10 @@ if(isset($_SESSION['name'])) {
                     <a class="active navbar-brand nav-link" href="/shopping_7.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myshopping.php">Category 1</a>
+                    <a class="nav-link" href="#">Category 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category 2</a>
+                    <a class="nav-link" href="/myshopping1.php">Category 2</a>
                 </li>
             </ul>
             <span class="navbar-right pull-right form-inline">
