@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-if ($_POST["logout"] and $_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_POST["logout"]) {
     log_out();
 }
 
