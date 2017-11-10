@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-if (isset($_POST["logout"])) {
+if (isset($_POST['logout'])) {
     log_out();
 }
 
@@ -45,7 +45,7 @@ if(isset($_SESSION['name'])) {
                 </li>
             </ul>
             <span class="navbar-right pull-right form-inline">
-                <form method="GET" action="" style="color: white">
+                <form method="POST" action="" style="color: white">
                     <?php
                     if ($valid) {
                         echo "Logged in as ".$id." ";
