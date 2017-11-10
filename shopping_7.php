@@ -5,7 +5,7 @@ session_start();
 $id = $idErr = "";//define variables id and idErr
 $valid = False;
 
-if ($_POST["logout"]) {
+if (isset($_POST["logout"])) {
     log_out();
 }
 

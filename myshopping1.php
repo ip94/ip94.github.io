@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-if ($_POST["logout"]) {
+if (isset($_POST["logout"])) {
     log_out();
 }
 
