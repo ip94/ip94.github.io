@@ -2,7 +2,8 @@
 <?php
 session_start();
 
-$id = $idErr = $valid = "";//define variables id and idErr
+$id = $idErr = "";//define variables id and idErr
+$valid = False;
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     log_out();
@@ -20,17 +21,17 @@ if(isset($_SESSION['name'])) {
         $idErr = "Missing";
     }
     else {
-        $interim_id = test_input($_POST["id"]); //get input text
+        $id = test_input($_POST["id"]); //get input text
         $file = "id_list.txt";
         $fh = fopen($file, 'r');
         $data = fread($fh, filesize($file));
         fclose($fh);
         $id_list = preg_split('/\r\n|\r|\n/', $data);
-        $valid = check_valid($interim_id);
+        $valid = in_array($id, $id_list);
         if (!$valid) {
             $idErr = "Invalid User";
         } else {
-            $id = $_SESSION['name'];
+            $_SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
         }
     }
 
@@ -81,13 +82,13 @@ if(isset($_SESSION['name'])) {
         </div>
     </nav>
     <main>
-<?php if (!$id or !$valid): ?>
+<?php if (!$valid): ?>
     <div class="container">
         <form class="form-inline form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div class="form-group col-12">
-                <label class="control-label col-3" for="email">Email address:</label>
-                <input class="form-control col-6" type="email" name="id">
-                <span class="col-3"><?php echo $idErr ?></span><br> <!-- TODO: check display -->
+            <div class="form-group">
+                <label class="control-label" for="email">Email address:</label>
+                <input class="form-control" type="email" name="id">
+                <?php echo $idErr ?>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -108,16 +109,6 @@ if(isset($_SESSION['name'])) {
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
       return $data;
-    }
-
-    function check_valid ($input) {
-        if (in_array($input, $id_list)) {
-            $response = True;
-            $_SESSION['name'] = $interim_id; //TODO: try to extend this session to myshopping1.php
-        } else {
-            $response = False;
-        }
-        return $response;
     }
 
     function log_out() {
