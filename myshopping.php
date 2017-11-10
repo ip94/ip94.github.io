@@ -14,11 +14,6 @@ if(isset($_SESSION['name'])) {
     $id = "";
     $valid = FALSE;
 }
-
-function log_out() {
-    session_unset();
-    session_destroy();
-}
 ?>
 <html lang="en">
 <head>
@@ -80,6 +75,12 @@ function log_out() {
             </div>
         </div>
     <?php endif; ?>
+    <?php 
+    function log_out() {
+        session_unset();
+        session_destroy();
+    }
+    ?>
     </main>
 </body>
 </html>
