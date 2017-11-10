@@ -10,7 +10,7 @@ if(isset($_SESSION['name'])) {
     $valid = FALSE;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_POST["logout"] and $_SERVER["REQUEST_METHOD"] == "POST") {
     log_out();
 }
 
@@ -57,7 +57,7 @@ function log_out() {
                         echo "Not logged in ";
                     }
                     ?>
-                    <button type="submit" class="btn btn-primary">Log Out</button>
+                    <button type="submit" name="logout" value="true" class="btn btn-primary">Log Out</button>
                 </form>
             </span> 
         </div>

@@ -5,7 +5,7 @@ session_start();
 $id = $idErr = "";//define variables id and idErr
 $valid = False;
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_POST["logout"] and $_SERVER["REQUEST_METHOD"] == "POST") {
     log_out();
 }
 
@@ -19,8 +19,7 @@ if(isset($_SESSION['name'])) {
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["id"])) {
         $idErr = "Missing";
-    }
-    else {
+    } else {
         $id = test_input($_POST["id"]); //get input text
         $file = "id_list.txt";
         $fh = fopen($file, 'r');
@@ -34,7 +33,6 @@ if(isset($_SESSION['name'])) {
             $_SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
         }
     }
-
 }
 // retrieve data from valid id list id_list.txt
 
@@ -67,7 +65,7 @@ if(isset($_SESSION['name'])) {
                 </li>
             </ul>
             <span class="navbar-right pull-right form-inline">
-                <form method="GET" action="" style="color: white">
+                <form method="POST" action="" style="color: white">
                     <?php
                     if ($valid) {
                         echo "Logged in as ".$id." ";
@@ -75,7 +73,7 @@ if(isset($_SESSION['name'])) {
                         echo "Not logged in ";
                     }
                     ?>
-                    <button type="submit" class="btn btn-primary">Log Out</button>
+                    <button type="submit" name="logout" value="true" class="btn btn-primary">Log Out</button>
                 </form>
             </span>
             
@@ -88,9 +86,9 @@ if(isset($_SESSION['name'])) {
             <div class="form-group">
                 <label class="control-label" for="email">Email address:</label>
                 <input class="form-control" type="email" name="id">
-                <?php echo $idErr ?>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
+            <p style="color: red"><?php echo $idErr ?></p>
         </form>
     </div>
 <?php else: ?>
