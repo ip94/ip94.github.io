@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start();
+
+if ($_POST["logout"] and $_SERVER["REQUEST_METHOD"] == "POST") {
+    log_out();
+}
+
 // TODO: Do we need a warning if session was not created?
 if(isset($_SESSION['name'])) {
     $id = $_SESSION['name'];
@@ -8,10 +13,6 @@ if(isset($_SESSION['name'])) {
 } else {
     $id = "";
     $valid = FALSE;
-}
-
-if ($_POST["logout"] and $_SERVER["REQUEST_METHOD"] == "POST") {
-    log_out();
 }
 
 function log_out() {
