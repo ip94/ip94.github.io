@@ -9,6 +9,15 @@ if(isset($_SESSION['name'])) {
     $id = "";
     $valid = FALSE;
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    log_out();
+}
+
+function log_out() {
+    session_unset();
+    session_destroy();
+}
 ?>
 <html lang="en">
 <head>

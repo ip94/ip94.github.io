@@ -9,6 +9,15 @@ if(isset($_SESSION['name'])) {
     $id = "";
     $valid = FALSE;
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    log_out();
+}
+
+function log_out() {
+    session_unset();
+    session_destroy();
+}
 ?>
 <html lang="en">
 <head>
@@ -64,7 +73,7 @@ if(isset($_SESSION['name'])) {
     <?php else: ?>
         <div class="container">
             <div class="jumbotron">
-                <h2>You have entered Shopping Category 2 as <?php echo $id ?>.</h2>
+                <h2>You have entered Shopping Category 1 as <?php echo $id ?>.</h2>
                 <p>Feel free to roam around the pages.</p>
                 <p>Please log out before leaving.</p>
             </div>
