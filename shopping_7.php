@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 // $_SESSION['name'] should be defined if visitor has not logged out.
 if(isset($_SESSION['name'])) {
     $id = $_SESSION['name'];
+    $valid = True;
 // Visitor not validated
 //check if form was submitted
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,15 +20,17 @@ if(isset($_SESSION['name'])) {
         $idErr = "Missing";
     }
     else {
-        $id = test_input($_POST["id"]); //get input text
+        $interim_id = test_input($_POST["id"]); //get input text
         $file = "id_list.txt";
         $fh = fopen($file, 'r');
         $data = fread($fh, filesize($file));
         fclose($fh);
         $id_list = preg_split('/\r\n|\r|\n/', $data);
-        $valid = check_valid($id);
+        $valid = check_valid($interim_id);
         if (!$valid) {
             $idErr = "Invalid User";
+        } else {
+            $id = $_SESSION['name'];
         }
     }
 
@@ -78,13 +81,13 @@ if(isset($_SESSION['name'])) {
         </div>
     </nav>
     <main>
-<?php if (!$id): ?>
+<?php if (!$id or !$valid): ?>
     <div class="container">
         <form class="form-inline form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div class="form-group">
+            <div class="form-group col-12">
                 <label class="control-label col-3" for="email">Email address:</label>
                 <input class="form-control col-6" type="email" name="id">
-                <span class="col-3"><?php echo $idErr ?></span> <!-- TODO: check display -->
+                <span class="col-3"><?php echo $idErr ?></span><br> <!-- TODO: check display -->
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -110,7 +113,7 @@ if(isset($_SESSION['name'])) {
     function check_valid ($input) {
         if (in_array($input, $id_list)) {
             $response = True;
-            $_SESSION['name'] = $id; //TODO: try to extend this session to myshopping1.php
+            $_SESSION['name'] = $interim_id; //TODO: try to extend this session to myshopping1.php
         } else {
             $response = False;
         }
