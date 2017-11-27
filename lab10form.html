@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Information Form</title>
+    <style type="text/css">
+        body {text-align: center; font-family: Helvetica, Times, Arial; line-height: 20px}
+        h1 {font-size: 60 px}
+        label {display: block; margin-bottom: 20px; font-size: 30 px}
+        p {color: #aaaaaa; font-size: 20px; display:none;}
+    </style>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript">
+        <!-- 
+        function check_name(string){
+            var reName = /^[a-zA-Z]+$/;
+            if (string.match(reName)){
+                document.getElementById('name_error').style.display = "none";
+                return true;
+            } else {
+                document.getElementById('name_error').style.display = "block";
+                return false;
+            }
+
+        };
+        function check_phone(string){
+            var rePhone = /\d{3}-{1}\d{3}-{1}\d{4}/;
+            if (string.match(rePhone)){
+                document.getElementById('phone_error').style.display = "none";
+                return true;
+            } else {
+                document.getElementById('phone_error').style.display = "block";
+                return false;
+            }
+        };
+        function check_address(){
+            var street = document.getElementByName('street').value;
+            var city = document.getElementByName('city').value;
+            var province = document.getElementByName('province').value;
+            if (street && city && province){
+                document.getElementById('empty_add').style.display = "none";
+                return true;
+            } else {
+                document.getElementById('empty_add').style.display = "display";
+                return false;
+            }
+        };
+        function validate(){
+            var validName = check_name(document.forms["myForm"]["name"].value);
+            var validPhone = check_phone(document.forms["myForm"]["phone"].value);
+            if(validName && validPhone && check_address()){
+                document.getElementById('submit').style.display = "inline-block";
+            }
+        };
+        function formChange(){
+            if (document.getElementById('ruby').checked){
+                $("#myForm").attr("action", "/lab10rb.rb");
+            } else if (document.getElementById('python').checked){
+                $("#myForm").attr("action", "/lab10py.py");
+            }
+        }
+        //-->
+    </script>
+</head>
+<body>
+    <h1>Personal Information Validation</h1>
+    <p>This form will only be sent out and analyzed after all entered information is in the correct format.</p>
+    <form id="myForm" action="/lab10rb.rb">
+        <label>
+            <input type="radio" name="page" onchange="formChange()" id="ruby" checked>Ruby
+            <input type="radio" name="page" onchange="formChange()" id="python"> Python
+        </label>
+        <label style="font-weight: bold">
+            Name: <input type="text" name="name">
+        </label>
+        <p id="name_error">Please enter your name.</p>
+        <label style="font-weight: bold">
+            Address
+        </label>
+        <p id="empty_add">Please fill in your address.</p>
+        <label>
+            Street Number: <input type="text" name="street">
+        </label>
+        <label>
+            City: <input type="text" name="city">
+        </label>
+        <label>
+            Province: <input type="text" name="province">
+        </label>
+        <label style="font-weight: bold">
+            Phone Number: <input type="text" name="phone" placeholder="012-345-6789">
+        </label>
+        <p id="phone_error">Please enter your phone number in the format of 012-345-6789</p>
+        <input type="button" onclick="validate()" value="Validate">
+        <input type="submit" style="display: none; " id="submit" value="Submit">
+    </form>
+
+</body>
+</html>
