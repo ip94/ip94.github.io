@@ -47,7 +47,7 @@
         function validate(){
             var validName = check_name(document.forms["myForm"]["name"].value);
             var validPhone = check_phone(document.forms["myForm"]["phone"].value);
-            var validAddress = check_address()
+            var validAddress = check_address();
             if(validName && validPhone && validAddress){
                 document.getElementById('submit').style.display = "inline-block";
             }
