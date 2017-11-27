@@ -33,14 +33,14 @@
             }
         };
         function check_address(){
-            var street = document.getElementByName('street').value;
-            var city = document.getElementByName('city').value;
-            var province = document.getElementByName('province').value;
+            var street = document.getElementsByName('street').value;
+            var city = document.getElementsByName('city').value;
+            var province = document.getElementsByName('province').value;
             if (street && city && province){
                 document.getElementById('empty_add').style.display = "none";
                 return true;
             } else {
-                document.getElementById('empty_add').style.display = "display";
+                document.getElementById('empty_add').style.display = "inline-block";
                 return false;
             }
         };
