@@ -33,9 +33,9 @@
             }
         };
         function check_address(){
-            var street = document.getElementsByName('street').value;
-            var city = document.getElementsByName('city').value;
-            var province = document.getElementsByName('province').value;
+            var street = document.getElementsByName('street')[0].value;
+            var city = document.getElementsByName('city')[0].value;
+            var province = document.getElementsByName('province')[0].value;
             if (street && city && province){
                 document.getElementById('empty_add').style.display = "none";
                 return true;
@@ -79,7 +79,7 @@
         </label>
         <p id="empty_add">Please fill in your address.</p>
         <label>
-            Street Number: <input type="text" name="street">
+            Street Address: <input type="text" name="street">
         </label>
         <label>
             City: <input type="text" name="city">
