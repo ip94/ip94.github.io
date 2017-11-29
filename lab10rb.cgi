@@ -10,7 +10,7 @@ params.each do |key, value|
   params[key] = value[0]
 end
 
-name1 = params['name']
+name1 = params['name'].capitalize
 street = params['street'].capitalize
 city = params['city'].capitalize
 province = params['province'].capitalize
@@ -51,8 +51,8 @@ PHONE
 
 
 puts html1
-puts "<h2>Hello #{name1}</h2>"
-puts "<h2>Your address is #{street}, #{city}, #{province}</h2>"
+puts "<h2>Hello #{name1}!!</h2>"
+puts "<h2>You live at #{street}, #{city}, #{province}</h2>"
 puts "<h2>Your phone number is:</h2>"
 puts "<h1>"+block+"</h1>"
 puts html2
