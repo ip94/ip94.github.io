@@ -54,9 +54,9 @@
         };
         function formChange(){
             if (document.getElementById('ruby').checked){
-                $("#myForm").attr("action", "/cgi-bin/lab10rb.cgi");
+                $("#myForm").attr("action", "./lab10rb.cgi");
             } else if (document.getElementById('python').checked){
-                $("#myForm").attr("action", "/cgi-bin/lab10py.py");
+                $("#myForm").attr("action", "./lab10py.cgi");
             }
         }
         //-->
@@ -65,7 +65,7 @@
 <body>
     <h1>Personal Information Validation</h1>
     <p>This form will only be sent out and analyzed after all entered information is in the correct format.</p>
-    <form id="myForm" action="/cgi-bin/lab10rb.cgi">
+    <form id="myForm" action="./lab10rb.cgi">
         <label>
             <input type="radio" name="page" onchange="formChange()" id="ruby" checked>Ruby
             <input type="radio" name="page" onchange="formChange()" id="python"> Python

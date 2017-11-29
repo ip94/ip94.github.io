@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python -w
 
 # Import modules for CGI handling 
 import cgi, cgitb 
@@ -7,9 +7,10 @@ import cgi, cgitb
 form = cgi.FieldStorage() 
 
 # Get data from fields
-info_list = [name,street,city,province]
+info_list = [name1,street,city,province]
 phone = str.split(form.getvalue('phone'),"-")
-for item in info_list:
+name1 = str.capwords(form.getvalue('name'))
+for item in info_list[1:]:
     item = str.capwords(form.getvalue(str(item)))
 
 phone_str = """

@@ -7,11 +7,11 @@ cgi = CGI.new
 # Store input data
 params = cgi.params
 
-name1 = cgi.params['name']
-street = cgi.params['street'].capitalize
-city = cgi.params['city'].capitalize
-province = cgi.params['province'].capitalize
-phone = cgi.params['phone'].split('-')
+name1 = params['name'][0]
+street = params['street'][0].capitalize
+city = params['city'][0].capitalize
+province = params['province'][0].capitalize
+phone = params['phone'].split('-')
 
 html1 = <<~HERE1
   <!DOCTYPE html>
