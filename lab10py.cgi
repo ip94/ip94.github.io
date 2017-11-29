@@ -1,4 +1,4 @@
-#!/usr/bin/python -w
+#!/usr/bin/python
 
 # Import modules for CGI handling 
 import cgi, cgitb 
@@ -7,11 +7,10 @@ import cgi, cgitb
 form = cgi.FieldStorage() 
 
 # Get data from fields
-info_list = [name1,street,city,province]
+info_list = ["name", "street", "city", "province"]
 phone = str.split(form.getvalue('phone'),"-")
-name1 = str.capwords(form.getvalue('name'))
-for item in info_list[1:]:
-    item = str.capwords(form.getvalue(str(item)))
+for item in info_list:
+    exec("{name} = '{value}'".format(name = item, value = form.getvalue(item).capitalize()))
 
 phone_str = """
 <div style='position:relative; display:inline-block' id='f1'>(%s)</div>
